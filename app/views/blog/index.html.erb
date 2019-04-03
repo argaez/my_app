@@ -1,0 +1,21 @@
+<h1>Blog</h1><br>
+<h1> <%= link_to "Haz Clic aquí para Crear un nuevo Blog", new_blog_path %></h1><br>
+<table>
+	<thead>
+		<tr>
+			<th style = "font-size: 50px; width: 250px; padding-top: 25px">Title</th>
+			<th style = "font-size: 50px; width: 250px; padding-top: 25px">Content</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @blogs.each do |blog| %>
+	<tr>
+			<td style = "font-size: 25px; width: 250px; line-height: 20px; padding-top: 25px"><%= blog.title %></td>
+			<td style = "font-size: 25px; width: 250px; line-height: 20px; padding-top: 25px"><%= blog.content%></td>
+			<td style = "font-size: 25px; width: 150px; line-height: 20px; padding-top: 25px"><%= link_to "Show", blog_path(blog.id) %></td> <!-- Funciona con blog.id pero también con el blog solo -->
+			<td style = "font-size: 25px; width: 150px; line-height: 20px; padding-top: 25px"><%= link_to "Edit", edit_blog_path(blog.id) %></td>
+			<td style = "font-size: 25px; width: 150px; line-height: 20px; padding-top: 25px"><%= link_to "Delete", blog_path(blog.id), method: :delete, data: {confirm: "Está seguro que quiere eliminar el Blog?"} %></td> <!-- este es un código java -->
+	</tr>
+	<% end %>
+	</tbody>
+</table>

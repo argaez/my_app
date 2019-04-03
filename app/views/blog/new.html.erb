@@ -1,0 +1,23 @@
+
+
+<%=form_for @blog, url: blog_index_path, method: :post do |f|%><!--se toma el prefix de la ruta del get porque en post no existe el prefix pero para que no me lleve al get, especifico que el metodo es post -->
+
+<div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+</div>
+
+<div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+</div>
+
+<div>
+    <%= f.submit %>
+</div>
+
+<% end %>
+
+<!-- esto es un form for 
+<form action="/create", method = "post">
+</form>

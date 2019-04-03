@@ -1,0 +1,16 @@
+<h1>Nos encontramos ubicados en Envigado</h1><br>
+<h2>Nuesto teléfono es 387878</h2>
+<address>Calle Falsa 123</address>
+
+
+<%= form_for @welcome, url: ruta_path, method: :post do |f| %>
+	<div>
+		<%= f.label "Nombre de la Casilla" %>
+		<%= f.label :name  %>
+
+		<%= f.text_field :name%>
+	</div>
+
+
+	<%= form_tag("/search?q=user", method: :get) do %> <!--Para buscar-->
+	<% end %>
